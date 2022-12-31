@@ -1,3 +1,3 @@
 ## Desktop applications
-This repository includes:
+This repository contains:
 - A program for calculationg celestial navigation parameters.
