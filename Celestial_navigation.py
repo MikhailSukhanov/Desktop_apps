@@ -67,8 +67,6 @@ def get_time_calc():
 			lab3['text'] = 'Числа должны быть в интервале [1; 13)'
 	else:
 		lab3['text'] = 'Должны быть введены числа в интервале [1; 13)'
-	ent1.delete(0, END)
-	ent2.delete(0, END)
 
 def time_interval():
 	remove_all()
@@ -94,8 +92,6 @@ def time_interval_calc():
 			lab6['text'] = 'Числа должны быть в интервале [1; 13)'
 	else:
 		lab6['text'] = 'Должны быть введены числа в интервале [1; 13)'
-	ent3.delete(0, END)
-	ent4.delete(0, END)
 
 def moments_method():
 	remove_all()
@@ -121,15 +117,9 @@ def moments_method_calc():
 		A = math.atan(1 / ctgA)
 		lab10['text'] = 'ctgAc = ' + str(round(ctgA, 3))
 		lab11['text'] = 'Ac = ' + str(round(A, 3)) + ' + πn, n∈Z'
-		ent5.delete(0, END)
-		ent6.delete(0, END)
-		ent7.delete(0, END)
 	else:
 		lab10['text'] = 'Должны быть введены числовые параметры (в радианах)'
 		lab11['text'] = ''
-		ent5.delete(0, END)
-		ent6.delete(0, END)
-		ent7.delete(0, END)
 
 def height_method():
 	remove_all()
@@ -155,22 +145,13 @@ def height_method_calc():
 		if cosA < -1 or cosA > 1:
 			lab15['text'] = 'cosAc > 1 или cosAc < -1'
 			lab16['text'] = ''
-			ent8.delete(0, END)
-			ent9.delete(0, END)
-			ent10.delete(0, END)
 		else:
 			A = math.acos(cosA)
 			lab15['text'] = 'cosAc = ' + str(round(cosA, 3))
 			lab16['text'] = 'Ac = ' + '±' + str(round(A, 3)) + ' + 2πn, n∈Z'
-			ent8.delete(0, END)
-			ent9.delete(0, END)
-			ent10.delete(0, END)
 	else:
 		lab15['text'] = 'Должны быть введены числовые параметры (в радианах)'
 		lab16['text'] = ''
-		ent8.delete(0, END)
-		ent9.delete(0, END)
-		ent10.delete(0, END)
 
 def moments_height_method():
 	remove_all()
@@ -196,22 +177,13 @@ def moments_height_method_calc():
 		if sinA < -1 or sinA > 1:
 			lab20['text'] = 'sinAc > 1 или sinAc < -1'
 			lab21['text'] = ''
-			ent11.delete(0, END)
-			ent12.delete(0, END)
-			ent13.delete(0, END)
 		else:
 			A = math.asin(sinA)
 			lab20['text'] = 'sinAc = ' + str(round(sinA, 3))
 			lab21['text'] = 'Ac = ' + str(round(A, 3)) + ' + 2πk, π - ' + str(round(A, 3)) + ' + 2πn,  k,n∈Z'
-			ent11.delete(0, END)
-			ent12.delete(0, END)
-			ent13.delete(0, END)
 	else:
 		lab20['text'] = 'Должны быть введены числовые параметры (в радианах)'
 		lab21['text'] = ''
-		ent11.delete(0, END)
-		ent12.delete(0, END)
-		ent13.delete(0, END)
 
 def star_height():
 	remove_all()
@@ -237,22 +209,13 @@ def star_height_calc():
 		if sinhc < -1 or sinhc > 1:
 			lab25['text'] = 'sinhc > 1 или sinhc < -1'
 			lab26['text'] = ''
-			ent14.delete(0, END)
-			ent15.delete(0, END)
-			ent16.delete(0, END)
 		else:
 			hc = math.asin(sinhc)
 			lab25['text'] = 'sinhc = ' + str(round(sinhc, 3))
 			lab26['text'] = 'hc = ' + str(round(hc, 3)) + ' + 2πk, π - ' + str(round(hc, 3)) + ' + 2πn,  k,n∈Z'
-			ent14.delete(0, END)
-			ent15.delete(0, END)
-			ent16.delete(0, END)
 	else:
 		lab25['text'] = 'Должны быть введены числовые параметры (в радианах)'
 		lab26['text'] = ''
-		ent14.delete(0, END)
-		ent15.delete(0, END)
-		ent16.delete(0, END)
 
 def vessel_coordinates():
 	remove_all()
@@ -303,12 +266,6 @@ def vessel_coordinates_calc():
 	else:
 		lab33['text'] = 'Должны быть введены числовые параметры (в радианах)'
 		lab34['text'] = ''
-	ent17.delete(0, END)
-	ent18.delete(0, END)
-	ent19.delete(0, END)
-	ent20.delete(0, END)
-	ent21.delete(0, END)
-	ent22.delete(0, END)
 
 def calculator():
 	def clear():
@@ -410,7 +367,6 @@ def dictionary():
 
 def dictionary_find():
 	k = ent23.get().lower()
-	ent23.delete(0, END)
 	txt1.delete(1.0, END)
 	if k in terms.keys():
 		txt1.insert(1.0, terms.get(k))
@@ -438,7 +394,7 @@ time_menu.add_command(label = 'Сколько времени прошло?', com
 azimuth_menu = Menu(menu, tearoff = 0)
 azimuth_menu.add_command(label = 'Метод моментов', command = moments_method)
 azimuth_menu.add_command(label = 'Метод высот', command = height_method)
-azimuth_menu.add_command(label = 'Метод моментов и высот', command = moments_height_method)
+azimuth_menu.add_command(label = 'Метод высот и моментов', command = moments_height_method)
 
 menu.add_cascade(label = 'Файл', menu = file_menu)
 menu.add_cascade(label = 'Время', menu = time_menu)
@@ -580,9 +536,9 @@ ent22.grid(row = 5, column = 1, sticky = W, padx = 5, pady = [3, 6])
 but7 = Button(text = 'Расчёт', width = 8, command = vessel_coordinates_calc)
 but7.grid(row = 12, sticky = W, padx = 5, pady = [7, 3])
 lab33 = Label(text = '')
-lab33.grid(row = 13, sticky = W, padx = 3, pady = [5, 2])
+lab33.grid(row = 13, column = 0, columnspan = 2, sticky = W, padx = 3, pady = [5, 2])
 lab34 = Label(text = '')
-lab34.grid(row = 14, sticky = W, padx = 3, pady = 2)
+lab34.grid(row = 14, column = 0, columnspan = 2, sticky = W, padx = 3, pady = 2)
 
 ent23 = Entry(width = 53)
 ent23.grid(row = 0, column = 0, padx = [5, 1], sticky = W)
