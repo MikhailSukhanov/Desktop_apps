@@ -258,8 +258,8 @@ def vessel_coordinates_calc():
 				phi %= 90
 			if lambda_ > 180 or lambda_ < -180:
 				lambda_ %= 180
-			lab33['text'] = 'φ = ' + str(round(phi, 4)) + '°'
-			lab34['text'] = 'λ = ' + str(round(lambda_, 4)) + '°'
+			lab33['text'] = 'Δφ = ' + str(round(phi, 4)) + '°'
+			lab34['text'] = 'Δλ = ' + str(round(lambda_, 4)) + '°'
 		else:
 			lab33['text'] = 'A1 = A2'
 			lab34['text'] = ''
